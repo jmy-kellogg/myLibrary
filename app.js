@@ -69,4 +69,3 @@ models.Series.sync({force: true})
     });
 })
 .catch(console.error);
-

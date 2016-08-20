@@ -1,6 +1,3 @@
-
-
-
 /* scroller*/
 
 html, body {
@@ -138,28 +135,6 @@ body {
 }
 /*scroler end*/
 
-/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
-/* ==========================================================================
-   HTML5 display definitions
-   ========================================================================== */
-/**
- * Correct `block` display not defined in IE 8/9.
- */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
-  display: block; }
-
-/**
  * Correct `inline-block` display not defined in IE 8/9.
  */
 audio,
@@ -191,19 +166,7 @@ template {
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-html {
-  font-family: sans-serif;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */ }
 
-/**
- * Remove default margin.
- */
-body {
-  margin: 0; }
 
 /* ==========================================================================
    Links
@@ -481,7 +444,6 @@ table {
 /* 
 Custom CSS for...
 'Modern Business' HTML Theme by Start Bootstrap
-
 All Start Bootstrap themes are licensed under Apache 2.0. 
 For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
 */
@@ -575,7 +537,7 @@ body {
 
 /* Footer Styles */
 footer {
-  margin: 50px 0; }
+  margin: 50px 0;}
 
 /* Responsive Styles */
 @media (max-width: 767px) {
@@ -590,7 +552,8 @@ footer {
 
 .navbar {
   padding: 0 40px;
-  background-color: #ddd; }
+  background-color: #ddd; 
+  margin: 0PX}
   .navbar a {
     color: #444;
     text-decoration: none; }
@@ -632,6 +595,7 @@ footer {
   width: 100%; }
 
 .container {
+
   margin-left: 5%;
   margin-right: 5%;
   clear: both; }
@@ -661,8 +625,10 @@ a:link, a:hover, a:visited, a:active {
   display: inline; }
 
 .section.lead > .container {
+  margin-top: 30px;
   margin-left: 0;
-  margin-right: 0; }
+  margin-right: 0; 
+  margin-bottom: 100px;}
 
 .page-header {
   text-align: left;
