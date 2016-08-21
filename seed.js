@@ -10,20 +10,19 @@ var Series = models.Series;
 var Review = models.Review;
 
 var data = {
-  Book: [
-    {title: "The Hobbit", type: "fiction", genre: "Fantasy", year: 1937, synopsis: "This is the prequel to the Lord of the Rings is about Bilbo Baggins. This adventure is about the unlikely hero traveling with a troop of dwarf to take back their home from the dragon Smog.", tags: "children, classic, fantasy, adventure"}
+  book: [
+    {title: "The Hobbit", type: "fiction", genre: "Fantasy", year: 1937, synopsis: "This is the prequel to the Lord of the Rings is about Bilbo Baggins. This adventure is about the unlikely hero traveling with a troop of dwarf to take back their home from the dragon Smog.", tags: "children, classic, fantasy, adventure"},
     {title: "The Fellowship of the Ring", type: "fiction", genre: "Fantasy", year: 1954, synopsis: "This is the first book in Lord of the Rings. Frodo along with his companion set out to destroy the one ring to save Middle Earth.", tags: "children, classic, fantasy, adventure"}
-
   ],
-  Author: [
-    {firstName: "J.R.R", lastName, "Tolkin", bio:"J. R. R. Tolkien, was an English writer, poet, philologist, and university professor who is best known as the author of the classic high-fantasy works The Hobbit, The Lord of the Rings, and The Silmarillion.", links:"https://en.wikipedia.org/wiki/J._R._R._Tolkien"}
-  ],
-  Series: [
-    {seriesName: "The Lord of the Rings", synopsis "The epic fantasy following a fellowship on a quest to save Middle Earth"}
-  ],
-  Review:[
-    {status: "read", personalReview: "Personal favorite", criticReview:"", rating: 5}
-  ]
+  // author: [
+  //   {firstName: "J.R.R", lastName: "Tolkin", bio: "J. R. R. Tolkien, was an English writer, poet, philologist, and university professor who is best known as the author of the classic high-fantasy works The Hobbit, The Lord of the Rings, and The Silmarillion.", links:"https://en.wikipedia.org/wiki/J._R._R._Tolkien"}
+  // ],
+  // series: [
+  //   {seriesName: "The Lord of the Rings", synopsis: "The epic fantasy following a fellowship on a quest to save Middle Earth"}
+  // ],
+  // review:[
+  //   {status: "read", personalReview: "Personal favorite", criticReview:"", rating: 5}
+  // ]
 };
 
 db.sync({force: true})

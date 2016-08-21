@@ -53,15 +53,15 @@ app.use(function (err, req, res, next) {
   });
 });
 
-models.Series.sync({force: true})
+models.Series.sync(/*{force: true}*/)
 .then(function () {
-    return models.Author.sync({force: true})
+    return models.Author.sync(/*{force: true}*/)
 })
 .then(function () {
-    return models.Review.sync({force: true})
+    return models.Review.sync(/*{force: true}*/)
 })
 .then(function () {
-    return models.Book.sync({force: true})
+    return models.Book.sync(/*{force: true}*/)
 })
 .then(function () {
     app.listen(3003, function () {

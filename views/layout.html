@@ -5,10 +5,13 @@
     <title>{% block title %}myLibrary{% endblock %}</title>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="/stylesheets/style.css" rel="stylesheet">
+    <!-- <link href="/stylesheets/scroller.css" rel="stylesheet"> -->
+   <link href="/stylesheets/media-queries.css" rel="stylesheet">
+
   </head>
   <body>
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-      <div class="container">
+      <div>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-items">
             <span class="sr-only">Toggle navigation</span>
@@ -21,7 +24,7 @@
         <div id="nav-items" class="collapse navbar-collapse">
           <ul class="navbar-nav">
             <li><a href="/books">books</a></li>
-            <li><a href="/autors">authors</a></li>
+            <li><a href="/authors">authors</a></li>
             <li><a href="/add">add</a></li>
             <li><a href="/search">search</a></li>
             <li><a href="/about">about</a></li>
@@ -32,7 +35,7 @@
     <div class="container content">
       {% block content %}{% endblock %}
     </div>
-    <div id="footer" class="container text-muted">
+    <div id="footer" class="text-muted">
       "The only thing that you absolutely have to know is the location of the library" -Albert Einstein
     </div>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

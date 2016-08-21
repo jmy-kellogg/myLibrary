@@ -12,7 +12,20 @@ var Book = db.define('book', {
 		type: Sequelize.ENUM('fiction', 'non-fiction')
 	},
 	genre: {
-		type: Sequelize.STRING,
+			type: Sequelize.ARRAY(Sequelize.TEXT),
+			set: function (value) {
+
+            var arrayOfTags;
+
+            if (typeof value === 'string') {
+                arrayOfTags = value.split(',').map(function (s) {
+                    return s.trim();
+                });
+                this.setDataValue('genre', arrayOfTags);
+                } else {
+                this.setDataValue('genre', value);
+            }
+        }
 	},
 	year: {
 		type: Sequelize.INTEGER,
@@ -35,6 +48,10 @@ var Book = db.define('book', {
                 this.setDataValue('tags', value);
             }
         }
+	},
+	picture:{
+		type: Sequelize.STRING,
+		isUrl: true,
 	}
 
 });
@@ -85,9 +102,10 @@ Book.belongsTo(Author);
 Book.belongsTo(Series);
 
 
-module.exports = {
+module.exports = {	
   Book: Book,
   Author: Author,
   Series: Series,
-  Review: Review
+  Review: Review,
+  db: db
 };
