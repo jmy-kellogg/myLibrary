@@ -13,7 +13,12 @@ router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 
 router.get('/', function(req, res, next){
-	res.render('home')
+	Book.findAll()
+		.then(function(books){
+			res.render('home', {
+				books: books
+			})
+		})
 }),
 router.get('/books', function(req, res, next){
 	res.render('books')
@@ -40,6 +45,7 @@ router.post('/', function(req, res, next){
 		genre: req.body.genre,
 		year: req.body.year,
 		synopsis: req.body.synopsis,
+		picture: req.body.picture,
 		tags: req.body.tags
 	})
 	.then(function(book){
