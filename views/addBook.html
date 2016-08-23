@@ -3,38 +3,16 @@
 {% block content %}
   <h3>Add to Library</h3>
   <hr>
+  <h4><b><u>Book</u></b></h4>
   <form method="post" action="/">
-    
+<!-- book -->    
     <!--   title   -->    
      <div class="form-group">
       <label for="title" class="col-sm-2 control-label">Title</label>
       <div class="col-sm-10 ">
         <input name="title" type="text" class="form-control"/>
       </div>
-    </div>
-
-    <!--  Author -->
-     <div class="form-group">
-      <label for="firstName" class="col-sm-2 control-label">Author's First Name</label>
-      <div class="col-sm-10">
-        <input name="firstName" type="text" class="form-control"/>
-      </div>
-    </div>
-     <div class="form-group">
-      <label for="lastName" class="col-sm-2 control-label">Author's Last Name</label>
-      <div class="col-sm-10">
-        <input name="lastName" type="text" class="form-control"/>
-      </div>
-    </div>
-
-    <!--     genre  --> 
-    <div class="form-group">
-      <label for="genre" class="col-sm-2 control-label">Genre</label>
-      <div class="col-sm-10">
-        <input name="genre" type="text" class="form-control"/>
-      </div>
-    </div>
-    
+    </div> 
     <!--     year published   --> 
     <div class="form-group">
       <label for="year" class="col-sm-2 control-label">Year Published</label>
@@ -63,6 +41,13 @@
         <input name="tags" type="text" class="form-control"/>
       </div>
     </div>
+    <!--     genre  --> 
+    <div class="form-group">
+      <label for="genre" class="col-sm-2 control-label">Genre</label>
+      <div class="col-sm-10">
+        <input name="genre" type="text" class="form-control"/>
+      </div>
+    </div>
     <!--  type fiction non fiction  -->  
     <div class="form-group">
         <label for="type" class="col-sm-2 control-label">Type</label>
@@ -72,8 +57,37 @@
           <option value="non-fiction">Non-Fiction</option>
         </select>
         </div>
-      </div>
+    </div>
+    
+    <h4><b><u>Author</u></b></h4>
       
+<!--  Author -->
+     <div class="form-group">
+      <label for="firstName" class="col-sm-2 control-label">Author's First Name</label>
+      <div class="col-sm-10">
+        <input name="firstName" type="text" class="form-control"/>
+      </div>
+    </div>
+     <div class="form-group">
+      <label for="lastName" class="col-sm-2 control-label">Author's Last Name</label>
+      <div class="col-sm-10">
+        <input name="lastName" type="text" class="form-control"/>
+      </div>
+    </div>
+        <!-- bio -->
+    <div class="form-group">
+      <label for="bio" class="col-sm-2 control-label">Author's Bio</label>
+      <div class="col-sm-10">
+        <input name="bio" type="text" class="form-control"/>
+      </div>
+    </div>
+        <!-- link -->
+    <div class="form-group">
+      <label for="links" class="col-sm-2 control-label">Author's Link</label>
+      <div class="col-sm-10 ">
+        <input name="links" type="text" class="form-control"/>
+      </div>
+    </div>
     <!-- submit buttotn -->
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-primary">submit</button>

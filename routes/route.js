@@ -21,7 +21,12 @@ router.get('/', function(req, res, next){
 		})
 }),
 router.get('/books', function(req, res, next){
-	res.render('books')
+	Book.findAll()
+	.then(function(books){
+		res.render('books', {
+			books: books
+		})
+	})
 }),
 router.get('/authors', function(req, res, next){
 	res.render('authors')
@@ -38,15 +43,27 @@ router.get('/add', function(req, res, next){
 })
 
 router.post('/', function(req, res, next){
-	console.log(req.body);
-	Book.create({
-		title: req.body.title,
-		type: req.body.type,
-		genre: req.body.genre,
-		year: req.body.year,
-		synopsis: req.body.synopsis,
-		picture: req.body.picture,
-		tags: req.body.tags
+	Author.findOrCreate({
+		where:{
+			firstName: req.body.firstName,
+			lastName: req.body.lastName,
+			bio: req.body.bio,
+			links: req.body.links
+		}
+	})
+	.spread(function(author, wasCreatedBool){
+		return Book.create({
+			title: req.body.title,
+			type: req.body.type,
+			genre: req.body.genre,
+			year: req.body.year,
+			synopsis: req.body.synopsis,
+			picture: req.body.picture,
+			tags: req.body.tags
+		})
+		.then(function(book){
+			return book.setAuthor(author);
+		})
 	})
 	.then(function(book){
 		console.log("Your book has been added. Thank you");

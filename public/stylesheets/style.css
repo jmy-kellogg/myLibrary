@@ -1,6 +1,6 @@
 /*body*/
 
-html, body {
+html{
   height: 100%;
   margin: 0;
   -webkit-user-select: none; /* Chrome/Safari */        
@@ -9,8 +9,16 @@ html, body {
 }
 
 body {
-  background: -webkit-linear-gradient(top, #4D4D4D 0, #4D4D4D 180px, #939393 400px);                
+  height: 100%;
+  margin: 0;
+  color: #1a1a1a;
+  background: -webkit-linear-gradient(top, #4D4D4D 0%, #4D4D4D 25%, #939393 100%);              
+  background-attachment: fixed;
   padding-top: 50px;
+}
+
+hr{
+  border-top: 1px solid #bebebe;
 }
 
 h2 {
@@ -279,12 +287,16 @@ a:link, a:hover, a:visited, a:active {
     font-weight: bolder;
     font-size: 1.5em; }
 
+.col-lg-5 {
+  display: inline-block;
+  width: 20%;
+  vertical-align: text-top;
+  margin: 5%; }
 .col-lg-6 {
   display: inline-block;
-  width: 35%;
+  width: 50%;
   vertical-align: text-top;
-  margin: 0 7%; }
-
+  margin: 5% 7%; }
 .col-lg-12 {
   width: 100%;
   text-align: center;
@@ -346,6 +358,10 @@ select {
     float: left; }
 
 
+#bookPic{
+  width: 150px;
+  height: 250px
+}
 
 /* Footer Styles */
 #footer {
@@ -354,6 +370,6 @@ select {
   outline-color: black;
   font-size: 1.3em;
   font-family: Papyrus;
-  background-color: #333;}
+  background-color: #2a2a2a;}
 
 
