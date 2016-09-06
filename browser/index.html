@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>myLibrary</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="/angular/angular.js" defer></script>
+    <script src="/angular-ui-router/release/angular-ui-router.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src= "/js/navBar/navBar.directive.js" defer></script>
+    <script src= "/js/footer/footer.directive.js" defer></script>
+    <script src= "/js/books/books.controller.js" defer></script>
+    <script src= "/js/books/books.state.js" defer></script>
+    <script src= "/js/factories/books.factory.js" defer></script>
+     <script src= "/js/authors/authors.controller.js" defer></script>
+    <script src= "/js/authors/authors.state.js" defer></script>
+    <script src= "/js/factories/authors.factory.js" defer></script>
+    <script src= "/js/scroller/scroller.controller.js" defer></script>
+    <script src= "/js/scroller/scroller.state.js" defer></script>
+</head>
+
+<body ng-app="myLibrary">
+    <nav-bar></nav-bar>
+    <ui-view></ui-view>
+    <footer></footer>
+</body>
+
+</html>

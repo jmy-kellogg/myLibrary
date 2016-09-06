@@ -1,0 +1,1 @@
+cover.controller.js

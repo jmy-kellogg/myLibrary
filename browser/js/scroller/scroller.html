@@ -1,0 +1,30 @@
+<div>
+    <div class="section">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div id="scroller">
+                    <div class="nav">
+                        <a class="prev">&laquo;</a>
+                        <a class="next">&raquo;</a>
+                    </div>
+                    <div ng-repeat="book in books">
+                        <div class="flip-container item" href="#">
+                            <div class="flipper">
+                                <div class="front">
+                                    <img src=" {{ book.picture }}" />
+                                </div>
+                                <div class="back">
+                                    <ul> <strong><ins>{{ book.title }}</ins></strong></ul>
+                                    <br>
+                                    <ul>{{ book.synopsis }}</ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--              <a class="item" href="#"><img src=" {{ book.picture }}" /></a>
+                        <a class="item" href="#"><img src=" {{ book.name }}" /></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

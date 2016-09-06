@@ -1,2 +1,4 @@
-node_modules;
-junkDrawer
+node_modules
+.idea
+.sass-cache
+bin

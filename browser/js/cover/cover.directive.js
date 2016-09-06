@@ -1,0 +1,1 @@
+cover.directive.js
