@@ -18,27 +18,20 @@ router.get('/books', function (req, res, next) {
   		next(data)
   	});
 });
-// router.get('/books', function(req, res, next){
-// 	Book.findAll()
-// 	.then(books => res.json(books)
-// 	})
-// }),
+
+router.get('/books/:id', function(req, res, next){
+	Book.findOne({where: {id: req.params.id}})
+	.then(book => res.json(book))
+		.catch(function (data) {
+  		next(data)
+  	});
+}),
+
 router.get('/authors', function(req, res, next){
 	Author.findAll({ where: req.query})
 		.then(authors => res.json(authors))
 		.catch(next);
 	})
-// }),
-// router.get('/about', function(req, res, next){
-// 	res.render('about')
-// }),
-// router.get('/search', function(req, res, next){
-// 	res.render('search')
-// }),
-
-// router.get('/add', function(req, res, next){
-// 	res.render('addBook')
-// })
 
 //cannot make puts via forms. only ajax requests. You can 
 router.put('/', function(req, res, next){

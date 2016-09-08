@@ -1,6 +1,7 @@
 app.controller('ScrollerCtrl', function($scope, BooksFactory, $state) {
 
-    BooksFactory.fetchAll()
+    $scope.setScroller = function(){
+        BooksFactory.fetchAll()
         .then(function(data) {
             var pictures = [];
             data.forEach(function(item) {
@@ -80,15 +81,15 @@ app.controller('ScrollerCtrl', function($scope, BooksFactory, $state) {
 
             return numberOfItems
         })
+    };
+    $scope.setScroller();
+
     $scope.getMiddle = function(){
         BooksFactory.deleteBook(+$('.middle').attr("id"))
         .then(function(resp){
             console.log('sad to see a good book go');
-            $state.go('scroller')
-            // $scope.$apply()
+            $scope.setScroller()
         });
-
-        }
-   
+    }
 
 })
