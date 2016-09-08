@@ -1,4 +1,4 @@
-app.controller('ScrollerCtrl', function($scope, BooksFactory) {
+app.controller('ScrollerCtrl', function($scope, BooksFactory, $state) {
 
     BooksFactory.fetchAll()
         .then(function(data) {
@@ -10,6 +10,7 @@ app.controller('ScrollerCtrl', function($scope, BooksFactory) {
             return pictures.length
         })
         .then(function(numbOfPics) {
+
             /* Create an array to hold the different image positions */
             var itemPositions = [];
             var numberOfItems = numbOfPics;
@@ -74,15 +75,20 @@ app.controller('ScrollerCtrl', function($scope, BooksFactory) {
                 scroll('next');
             });
 
-            $('removeBook').click(function(){
-                
-            })
-
-     
 
             });
 
-
+            return numberOfItems
         })
+    $scope.getMiddle = function(){
+        BooksFactory.deleteBook(+$('.middle').attr("id"))
+        .then(function(resp){
+            console.log('sad to see a good book go');
+            $state.go('scroller')
+            // $scope.$apply()
+        });
+
+        }
+   
 
 })

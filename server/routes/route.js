@@ -7,22 +7,10 @@ var Book = models.Book;
 var Author = models.Author;
 var Series = models.Series;
 var Review = models.Review;
-// var db = require('../db');
-// var Book = db.model('book');
-// var Author = db.model('author');
-// var Series = db.model('series');
-// var Review = db.model('book');
 
 
 
-// router.get('/', function(req, res, next){
-// 	res.render()
-// 	Book.findAll()
-// 		.then(function(books){
-// 			res.json(books)
-// 		})
-// 		.catch(next)
-// }),
+
 router.get('/books', function (req, res, next) {
   Book.findAll({ where: req.query })
  	 .then(books => res.json(books))
@@ -51,6 +39,8 @@ router.get('/authors', function(req, res, next){
 // router.get('/add', function(req, res, next){
 // 	res.render('addBook')
 // })
+
+//cannot make puts via forms. only ajax requests. You can 
 router.put('/', function(req, res, next){
 	console.log('updated');
 	Book.update({
@@ -90,6 +80,13 @@ router.post('/add', function(req, res, next){
 		res.redirect('/')
 	})
 	.catch(next)
+});
+
+router.delete('/books/:id', function(req, res, next){
+	Book.destroy({where: {id: req.params.id }})
+	.then(function(resp){
+		res.json(resp)
+	})
 })
   
 

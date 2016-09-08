@@ -15,5 +15,14 @@ app.factory('BooksFactory', function($http){
 		})
 	}
 
+	BooksFactory.deleteBook = function(id){
+		return $http.delete('/api/books/' + id )
+		.then(function(resp){
+			console.log('done deleting', resp);
+			return resp.data
+		})
+
+	}
+
 	return BooksFactory;
 })

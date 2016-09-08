@@ -139,9 +139,9 @@ img {
 
 .nav {
   position: absolute;
-  width: 250px;
+  width: 290px;
   height: 200px;
-  margin: 5px 0 0 2px;
+  margin: 5px 0 0 0;
   z-index: 2;
   display: none;
 }
@@ -150,6 +150,8 @@ img {
   display: block;
   height: 30px;
   width: 30px;
+  top: -20px;
+  left: -20px;
   background-color: rgba(0,0,0,0.85);
   border-radius:15px;
   color: #E4E4E4;
@@ -167,7 +169,7 @@ img {
   border-radius:15px;
   color: #E4E4E4;
   bottom: 15px;
-  left: 15px;
+  left: -25px;
   text-align: center;
   line-height: 26px;
   cursor: pointer;
