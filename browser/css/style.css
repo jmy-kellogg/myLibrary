@@ -57,7 +57,7 @@ img {
   display: block;
   position: absolute;
   border-radius: 10px;
-  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.85, transparent), to(rgba(255,255,255,0.15)));
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.70, transparent), to(rgba(255,255,255,0.15)));
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -74,7 +74,7 @@ img {
   position: absolute;
   width: 100%;
   height: 100%;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3), 0 0 0 1px rgba(0,0,0,0.4);
+ /* box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3), 0 0 0 1px rgba(0,0,0,0.4);*/
 }
 
 #scroller .item img {
@@ -140,12 +140,24 @@ img {
 .nav {
   position: absolute;
   width: 250px;
-  height: 30px;
-  margin: 170px 0 0;
+  height: 200px;
+  margin: 5px 0 0 2px;
   z-index: 2;
   display: none;
 }
-
+.removeBook {
+  position: absolute;
+  display: block;
+  height: 30px;
+  width: 30px;
+  background-color: rgba(0,0,0,0.85);
+  border-radius:15px;
+  color: #E4E4E4;
+  line-height: 26px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5), 0 0 0 1px rgba(0,0,0,0.7);
+  -webkit-tap-highlight-color: transparent;
+}
 .prev, .next {
   position: absolute;
   display: block;
@@ -245,6 +257,7 @@ Half Page Height Carousel Customization
 
 /*Navigation bar end*/
 /* Page Sections*/ 
+
 .section{
   height: 70vh;
 /*  margin-bottom: -100px;*/
@@ -294,11 +307,11 @@ Half Page Height Carousel Customization
   margin-right: 5%; 
   margin-bottom: 100px;}
 
-default column size
+/*default column size*/
 
 .page{
-  height: 100%;
-  background-color: green
+  margin-top: 5vh;
+  margin-bottom: 30vh;
 }
 .col-lg-4 {
   vertical-align: text-top;

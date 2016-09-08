@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var Promise = require('bluebird');
-var bodyParser = require('body-parser');
 var models = require('../db/models/library.js');
 var db = require('../db')
 var Book = models.Book;
@@ -14,8 +13,7 @@ var Review = models.Review;
 // var Series = db.model('series');
 // var Review = db.model('book');
 
-router.use(bodyParser.urlencoded({extended: true}));
-router.use(bodyParser.json());
+
 
 // router.get('/', function(req, res, next){
 // 	res.render()
@@ -28,7 +26,9 @@ router.use(bodyParser.json());
 router.get('/books', function (req, res, next) {
   Book.findAll({ where: req.query })
  	 .then(books => res.json(books))
-  	.catch(next);
+  	.catch(function (data) {
+  		next(data)
+  	});
 });
 // router.get('/books', function(req, res, next){
 // 	Book.findAll()
@@ -51,36 +51,46 @@ router.get('/authors', function(req, res, next){
 // router.get('/add', function(req, res, next){
 // 	res.render('addBook')
 // })
+router.put('/', function(req, res, next){
+	console.log('updated');
+	Book.update({
+		title: "Hello"
+	},{ where: {id: 1 } })
+	.spread (function(count, books){
+		console.log("count", count);
+		console.log('books', books)
+	})
+})
 
-// router.post('/', function(req, res, next){
-// 	Author.findOrCreate({
-// 		where:{
-// 			firstName: req.body.firstName,
-// 			lastName: req.body.lastName,
-// 			bio: req.body.bio,
-// 			links: req.body.links
-// 		}
-// 	})
-// 	.spread(function(author, wasCreatedBool){
-// 		return Book.create({
-// 			title: req.body.title,
-// 			type: req.body.type,
-// 			genre: req.body.genre,
-// 			year: req.body.year,
-// 			synopsis: req.body.synopsis,
-// 			picture: req.body.picture,
-// 			tags: req.body.tags
-// 		})
-// 		.then(function(book){
-// 			return book.setAuthor(author);
-// 		})
-// 	})
-// 	.then(function(book){
-// 		console.log("Your book has been added. Thank you");
-// 		res.redirect('/')
-// 	})
-// 	.catch(next)
-// })
+router.post('/add', function(req, res, next){
+	Author.findOrCreate({
+		where:{
+			firstName: req.body.firstName,
+			lastName: req.body.lastName,
+			bio: req.body.bio,
+			links: req.body.links
+		}
+	})
+	.spread(function(author, wasCreatedBool){
+		return Book.create({
+			title: req.body.title,
+			type: req.body.type,
+			genre: req.body.genre,
+			year: req.body.year,
+			synopsis: req.body.synopsis,
+			picture: req.body.picture,
+			tags: req.body.tags
+		})
+		.then(function(book){
+			return book.setAuthor(author);
+		})
+	})
+	.then(function(book){
+		console.log("Your book has been added. Thank you");
+		res.redirect('/')
+	})
+	.catch(next)
+})
   
 
 module.exports = router; 

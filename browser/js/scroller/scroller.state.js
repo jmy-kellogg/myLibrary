@@ -7,7 +7,7 @@ app.config(function ($stateProvider) {
   $stateProvider.state('scroller', {
     url: '/home',
     templateUrl: '/js/scroller/scroller.html',
-    controller: 'scrollerCtrl',
+    controller: 'ScrollerCtrl',
     resolve: {
       getBooks: function (BooksFactory) {
         return BooksFactory.fetchAll();

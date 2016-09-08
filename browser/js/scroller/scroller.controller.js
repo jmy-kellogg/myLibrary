@@ -1,17 +1,18 @@
-app.controller('scrollerCtrl', function($scope, BooksFactory) {
-    var pictures = [];
+app.controller('ScrollerCtrl', function($scope, BooksFactory) {
 
     BooksFactory.fetchAll()
         .then(function(data) {
+            var pictures = [];
             data.forEach(function(item) {
                 pictures.push(item.picture)
             });
             $scope.books = data;
+            return pictures.length
         })
-        .then(function() {
+        .then(function(numbOfPics) {
             /* Create an array to hold the different image positions */
             var itemPositions = [];
-            var numberOfItems = pictures.length;
+            var numberOfItems = numbOfPics;
             /* Assign each array element a CSS class based on its initial position */
             function assignPositions() {
                 for (var i = 0; i < numberOfItems; i++) {
@@ -50,11 +51,11 @@ app.controller('scrollerCtrl', function($scope, BooksFactory) {
             }
 
             /* Do all this when the DOMs ready */
-            // $(document).ready(function() {
-
-            assignPositions();
+            $(document).ready(function() {
 
             // var autoScroll = window.setInterval("scroll('next')", 4000);
+            assignPositions();
+
 
             /* Hover behaviours */
             $('#scroller').hover(function() {
@@ -73,18 +74,13 @@ app.controller('scrollerCtrl', function($scope, BooksFactory) {
                 scroll('next');
             });
 
-            /*Click behaviours on book*/
-            $('.middle').click(function() {
-                $(this).removeClass('middle');
-                $(this).addClass('backCover')
-            });
-            // $('.backCover').click(function(){
-            //     console.log("clicked")
-            //     $(this).removeClass('backCover');
-            //     $(this).addClass('middle')
-            // });
+            $('removeBook').click(function(){
+                
+            })
 
-            // });
+     
+
+            });
 
 
         })
